@@ -30,7 +30,7 @@ export default function RecordList() {
   useEffect(() => {
     async function getRecords() {
       const response = await fetch(
-        `https://weeklymealplanapi.herokuapp.com/record/`
+        `https://weeklymealplannerapi.herokuapp.com/record`
       );
 
       if (!response.ok) {
@@ -50,7 +50,7 @@ export default function RecordList() {
 
   // This method will delete a record
   async function deleteRecord(id) {
-    await fetch(`https://weeklymealplanapi.herokuapp.com/${id}`, {
+    await fetch(`https://weeklymealplannerapi.herokuapp.com/record/${id}`, {
       method: "DELETE",
     });
 

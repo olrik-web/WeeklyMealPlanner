@@ -15,7 +15,7 @@ export default function Edit() {
     async function fetchData() {
       const id = params.id.toString();
       const response = await fetch(
-        `https://weeklymealplanapi.herokuapp.com/record/${params.id.toString()}`
+        `https://weeklymealplannerapi.herokuapp.com/record/record/${params.id.toString()}`
       );
 
       if (!response.ok) {
@@ -55,13 +55,16 @@ export default function Edit() {
     };
 
     // This will send a post request to update the data in the database.
-    await fetch(`https://weeklymealplanapi.herokuapp.com/update/${params.id}`, {
-      method: "POST",
-      body: JSON.stringify(editedPerson),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    await fetch(
+      `https://weeklymealplannerapi.herokuapp.com/record/update/${params.id}`,
+      {
+        method: "POST",
+        body: JSON.stringify(editedPerson),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     navigate("/");
   }
