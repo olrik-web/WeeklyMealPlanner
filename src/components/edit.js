@@ -15,7 +15,7 @@ export default function Edit() {
     async function fetchData() {
       const id = params.id.toString();
       const response = await fetch(
-        `https://weeklymealplannerapi.herokuapp.com/record/record/${params.id.toString()}`
+        `https://weeklymealplannerapi.herokuapp.com/record/${params.id.toString()}`
       );
 
       if (!response.ok) {

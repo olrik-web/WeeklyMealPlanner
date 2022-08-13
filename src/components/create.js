@@ -24,7 +24,7 @@ export default function Create() {
     const newPerson = { ...form };
 
     await fetch(
-      "https://weeklymealplannerapi.herokuapp.com/record/record/add",
+      "https://weeklymealplannerapi.herokuapp.com/record/add",
       {
         method: "POST",
         headers: {
